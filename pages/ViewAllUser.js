@@ -36,8 +36,9 @@ export default class ViewAllUser extends React.Component {
           renderItem={({ item }) => (
             <View key={item.user_id} style={{ backgroundColor: 'white', padding: 20 }}>
               <Text>Id: {item.user_id}</Text>
-              <Text>Name: {item.user_name}</Text>
+              <Text>Name: {item.first_name} { item.last_name}</Text>
               <Text>Contact: {item.user_contact}</Text>
+              <Text>Acre: {item.user_acre}</Text>
               <Text>Address: {item.user_address}</Text>
             </View>
           )}

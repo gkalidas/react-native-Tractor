@@ -9,6 +9,8 @@ export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
     db.transaction(function(txn) {
+      // uncomment below after changing DB
+      // txn.executeSql('DROP TABLE IF EXISTS table_user', []);
       txn.executeSql(
         "SELECT name FROM sqlite_master WHERE type='table' AND name='table_user'",
         [],
@@ -17,7 +19,7 @@ export default class HomeScreen extends React.Component {
           if (res.rows.length == 0) {
             txn.executeSql('DROP TABLE IF EXISTS table_user', []);
             txn.executeSql(
-              'CREATE TABLE IF NOT EXISTS table_user(user_id INTEGER PRIMARY KEY AUTOINCREMENT, user_name VARCHAR(20), user_contact INT(10), user_address VARCHAR(255))',
+              'CREATE TABLE IF NOT EXISTS table_user(user_id INTEGER PRIMARY KEY AUTOINCREMENT, first_name VARCHAR(20), last_name VARCHAR(20), user_contact INT(10),user_acre INTEGER(10), user_address VARCHAR(255))',
               []
             );
           }
@@ -33,7 +35,8 @@ export default class HomeScreen extends React.Component {
           backgroundColor: 'white',
           flexDirection: 'column',
         }}>
-        <Mytext text="SQLite Example" />
+          <View><Mytext text="SQLite Example" /></View>
+        
         <Mybutton
           title="Register"
           customClick={() => this.props.navigation.navigate('Register')}
