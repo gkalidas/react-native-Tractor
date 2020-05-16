@@ -54,6 +54,8 @@ export default class ViewUser extends React.Component {
           <Text>User Name: {this.state.userData.user_name}</Text>
           <Text>User Contact: {this.state.userData.user_contact}</Text>
           <Text>User Address: {this.state.userData.user_address}</Text>
+          <Text>User Acre: {this.state.userData.user_acre}</Text>
+          <Text>User Kaam: {this.state.userData.user_kaam}</Text>
         </View>
       </View>
     );

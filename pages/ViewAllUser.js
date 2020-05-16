@@ -39,6 +39,7 @@ export default class ViewAllUser extends React.Component {
               <Text>Name: {item.first_name} { item.last_name}</Text>
               <Text>Contact: {item.user_contact}</Text>
               <Text>Acre: {item.user_acre}</Text>
+              <Text>Kaam: {item.user_kaam}</Text>
               <Text>Address: {item.user_address}</Text>
             </View>
           )}

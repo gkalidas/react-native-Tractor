@@ -60,7 +60,7 @@ export default class UpdateUser extends React.Component {
         if (user_address){
           db.transaction((tx)=> {
             tx.executeSql(
-              'UPDATE table_user set user_name=?, user_contact=? , user_address=? where user_id=?',
+              'UPDATE table_user set first_name=?, user_contact=? , user_address=? where user_id=?',
               [user_name, user_contact, user_address, input_user_id],
               (tx, results) => {
                 console.log('Results',results.rowsAffected);
