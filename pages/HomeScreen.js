@@ -8,13 +8,13 @@ var db = openDatabase({ name: 'UserDatabase.db' });
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-    db.transaction(function(txn) {
+    db.transaction(function (txn) {
       // uncomment below after changing DB
       // txn.executeSql('DROP TABLE IF EXISTS table_user', []);
       txn.executeSql(
         "SELECT name FROM sqlite_master WHERE type='table' AND name='table_user'",
         [],
-        function(tx, res) {
+        function (tx, res) {
           console.log('item:', res.rows.length);
           if (res.rows.length == 0) {
             txn.executeSql('DROP TABLE IF EXISTS table_user', []);
@@ -35,8 +35,8 @@ export default class HomeScreen extends React.Component {
           backgroundColor: 'white',
           flexDirection: 'column',
         }}>
-          <View><Mytext text="SQLite Example" /></View>
-        
+        <View style={{ alignItems: "center" }}><Mytext text="Operations" /></View>
+
         <Mybutton
           title="Register"
           customClick={() => this.props.navigation.navigate('Register')}
